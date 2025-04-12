@@ -3,3 +3,13 @@
 
 # Ada Library Information
 *.ali
+
+.env
+
+node_modules
+
+package-lock.json
+
+nodemon.json
+
+.eslintrc.js

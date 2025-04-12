@@ -1,0 +1,61 @@
+generator client {
+    provider = "prisma-client-js"
+}
+
+datasource db {
+    provider = "postgresql"
+    url      = env("DATABASE_URL")
+}
+
+model Vendor {
+    id        String     @id @default(uuid())
+    name      String
+    email     String   @unique
+    address   String
+    phone     String
+    password  String
+    userType  UserType   @default(VENDOR)
+    isActive  Boolean    @default(true)
+    menuItems MenuItem[]
+    categories Category[]
+    createdAt DateTime   @default(now())
+    updatedAt DateTime   @updatedAt
+}
+
+model Category {
+    id        String     @id @default(uuid())
+    name      String
+    menuItems MenuItem[] @relation("MenuItemCategory")
+    vendorId  String
+    vendor    Vendor     @relation(fields: [vendorId], references: [id])
+}
+
+model MenuItem {
+    id          String   @id @default(uuid())
+    name        String
+    description String?
+    price       Float
+    image       String
+    available   Boolean  @default(true)
+    vendorId    String
+    categoryId  String?
+    vendor      Vendor   @relation(fields: [vendorId], references: [id])
+    category    Category? @relation("MenuItemCategory", fields: [categoryId], references: [id])
+    createdAt   DateTime @default(now())
+    updatedAt   DateTime @updatedAt
+}
+
+model Customer {
+    id        String   @id @default(uuid())
+    email     String   @unique
+    name      String
+    password  String
+    userType  UserType @default(CUSTOMER)
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+}
+
+enum UserType {
+    CUSTOMER
+    VENDOR
+}
