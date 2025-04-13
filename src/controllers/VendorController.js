@@ -1,5 +1,4 @@
-const vendorService = require('../services/VendorService');
-const categoryService = require('../services/CategoryService');
+const { vendorService, categoryService } = require('../services/index');
 
 /**
  * Get all vendors with pagination

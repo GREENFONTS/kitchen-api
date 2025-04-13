@@ -1,4 +1,4 @@
-const menuItemService = require('../services/MenuItemService');
+const { menuItemService } = require('../services/index');
 
 /**
  * Get all menu items with pagination
