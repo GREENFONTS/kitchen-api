@@ -65,7 +65,7 @@ const getVendorCategories = async (req, res) => {
  * @param {Object} res - Express response object
  */
 const createCategory = async (req, res) => {
-  const result = await categoryService.createCategory(req.body);
+  const result = await categoryService.createCategory(req.body, req.user.id);
   return res.status(result.status).json(result);
 };
 

@@ -72,8 +72,6 @@
  *       required:
  *         - name
  *         - price
- *         - vendorId
- *         - categoryId
  *       properties:
  *         name:
  *           type: string
@@ -100,7 +98,6 @@
  *         price: 9.99
  *         image: https://example.com/images/classic-burger.jpg
  *         available: true
- *         vendorId: 123e4567-e89b-12d3-a456-426614174001
  *         categoryId: 123e4567-e89b-12d3-a456-426614174002
  *
  *     MenuItemUpdate:

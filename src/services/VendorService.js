@@ -52,6 +52,15 @@ const getAllVendors = async ({
       // Get vendors with pagination
       const vendors = await prisma.vendor.findMany({
         where,
+        select: {
+          id: true,
+          name: true,
+          email: true,
+          phone: true,
+          address: true,
+          isActive: true,
+          createdAt: true,
+        },
         include: {
           menuItems: true,
         },

@@ -37,7 +37,7 @@ const getVendorCategories = async vendorId => {
  * @param {Object} categoryData - The category data
  * @returns {Promise<Object>} API response with created category
  */
-const createCategory = async categoryData => {
+const createCategory = async (categoryData, vendorId) => {
   return handleServiceResponse(
     async () => {
       // Check if category with same name already exists
@@ -52,6 +52,7 @@ const createCategory = async categoryData => {
       const category = await prisma.category.create({
         data: {
           name: categoryData.name,
+          vendorId,
         },
       });
 
