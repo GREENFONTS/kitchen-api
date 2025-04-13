@@ -5,10 +5,10 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "node index.js",
+    "start": "npm run db:setup && node dist/index.js",
     "dev": "nodemon --experimental-json-modules index.js",
     "format": "prettier --write .",
-    "build": "npm run clean && npm run build:js",
+    "build": "mkdir -p dist && cp -R src dist/src && cp index.js dist/",
     "build:js": "babel src -d dist --copy-files",
     "clean": "rimraf dist",
     "seed": "node prisma/seed.js",
