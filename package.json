@@ -18,7 +18,7 @@
     "migrate:dev": "prisma migrate dev",
     "prisma:generate": "prisma generate",
     "dev:debug": "nodemon --inspect index.js",
-    "db:setup": "npm run prisma:generate && npm run migrate:dev && npm run db:seed"
+    "db:setup": "npm run prisma:generate && npm run migrate && npm run db:seed"
   },
   "prisma": {
     "seed": "node prisma/seed.js"
