@@ -38,7 +38,6 @@ const authenticate = async (req, res, next) => {
           id: true,
           name: true,
           email: true,
-          userType: true,
           createdAt: true,
           updatedAt: true,
         },
@@ -50,7 +49,6 @@ const authenticate = async (req, res, next) => {
           id: true,
           name: true,
           email: true,
-          userType: true,
           address: true,
           phone: true,
           isActive: true,
@@ -70,7 +68,7 @@ const authenticate = async (req, res, next) => {
     }
 
     // Attach user to request
-    req.user = user;
+    req.user = { ...user, userType: decoded.userType };
 
     next();
   } catch (error) {

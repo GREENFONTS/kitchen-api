@@ -40,13 +40,11 @@ const registerCustomer = async userData => {
           name: userData.name,
           email: userData.email,
           password: hashedPassword,
-          userType: 'CUSTOMER',
         },
         select: {
           id: true,
           name: true,
           email: true,
-          userType: true,
           createdAt: true,
           updatedAt: true,
         },
@@ -90,7 +88,7 @@ const loginCustomer = async credentials => {
         {
           id: customer.id,
           email: customer.email,
-          userType: customer.userType,
+          userType: 'CUSTOMER',
         },
         process.env.JWT_SECRET,
         { expiresIn: '24h' }
@@ -101,7 +99,7 @@ const loginCustomer = async credentials => {
         id: customer.id,
         name: customer.name,
         email: customer.email,
-        userType: customer.userType,
+        userType: 'CUSTOMER',
       };
 
       return {
@@ -150,7 +148,7 @@ const loginVendor = async credentials => {
         {
           id: vendor.id,
           email: vendor.email,
-          userType: vendor.userType,
+          userType: 'VENDOR',
         },
         process.env.JWT_SECRET,
         { expiresIn: '24h' }
@@ -161,7 +159,7 @@ const loginVendor = async credentials => {
         id: vendor.id,
         name: vendor.name,
         email: vendor.email,
-        userType: vendor.userType,
+        userType: 'VENDOR',
         address: vendor.address,
         phone: vendor.phone,
         isActive: vendor.isActive,

@@ -9,6 +9,13 @@ const prisma = new PrismaClient();
 
 async function main() {
   // Hash passwords
+
+  const vendorCount = await prisma.vendor.count();
+  if (vendorCount > 0) {
+    console.log('Vendors already exist');
+    return;
+  }
+
   const saltRounds = 10;
   const password1 = await bcrypt.hash(process.env.VENDOR_PASSWORD_1, saltRounds);
   const password2 = await bcrypt.hash(process.env.VENDOR_PASSWORD_2, saltRounds);

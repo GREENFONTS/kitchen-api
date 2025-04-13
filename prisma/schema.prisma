@@ -14,7 +14,6 @@ model Vendor {
     address   String
     phone     String
     password  String
-    userType  UserType   @default(VENDOR)
     isActive  Boolean    @default(true)
     menuItems MenuItem[]
     categories Category[]
@@ -50,12 +49,6 @@ model Customer {
     email     String   @unique
     name      String
     password  String
-    userType  UserType @default(CUSTOMER)
     createdAt DateTime @default(now())
     updatedAt DateTime @updatedAt
-}
-
-enum UserType {
-    CUSTOMER
-    VENDOR
 }

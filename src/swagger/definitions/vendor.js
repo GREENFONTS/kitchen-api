@@ -24,9 +24,6 @@
  *         isActive:
  *           type: boolean
  *           description: Whether the vendor is active
- *         userType:
- *           type: string
- *           description: Type of user (always VENDOR)
  *         createdAt:
  *           type: string
  *           format: date-time
@@ -47,7 +44,6 @@
  *         address: "123 Main St, Anytown, USA"
  *         phone: "+1-555-123-4567"
  *         isActive: true
- *         userType: "VENDOR"
  *         createdAt: "2023-01-01T00:00:00.000Z"
  *         updatedAt: "2023-01-01T00:00:00.000Z"
  *         menuItems: []
@@ -94,7 +90,6 @@
  *           address: 123 Main St, Anytown, USA
  *           phone: (555) 123-4567
  *           isActive: true
- *           userType: VENDOR
  *           createdAt: 2023-01-01T00:00:00.000Z
  *           updatedAt: 2023-01-01T00:00:00.000Z
  *           menuItems: []
@@ -148,7 +143,6 @@
  *             address: "123 Main St, Anytown, USA",
  *             phone: "(555) 123-4567",
  *             isActive: true,
- *             userType: "VENDOR",
  *             createdAt: "2023-01-01T00:00:00.000Z",
  *             updatedAt: "2023-01-01T00:00:00.000Z"
  *           }
