@@ -178,7 +178,7 @@ const handleServiceResponse = async (
   }
 };
 
-export {
+module.exports = {
   success,
   error,
   notFound,

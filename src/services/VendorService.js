@@ -1,6 +1,6 @@
-import { PrismaClient } from '@prisma/client';
+const { PrismaClient } = require('@prisma/client');
 const prisma = new PrismaClient();
-import { handleServiceResponse } from '../utils/apiResponse.js';
+const { handleServiceResponse } = require('../utils/apiResponse');
 
 /**
  * Get all vendors with pagination
@@ -168,4 +168,4 @@ const vendorsExist = async () => {
   }
 };
 
-export { getAllVendors, getVendorById, getVendorMenuItems, vendorsExist };
+module.exports = { getAllVendors, getVendorById, getVendorMenuItems, vendorsExist };

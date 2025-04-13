@@ -1,4 +1,4 @@
-import * as apiResponse from '../utils/apiResponse.js';
+const apiResponse = require('../utils/apiResponse');
 
 /**
  * Middleware factory for request validation
@@ -32,4 +32,4 @@ const validate = (schema, property = 'body') => {
   };
 };
 
-export { validate };
+module.exports = { validate };

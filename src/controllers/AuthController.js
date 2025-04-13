@@ -1,4 +1,4 @@
-import { authService } from '../services/index.js';
+const { authService } = require('../services/index');
 
 /**
  * Register a new customer
@@ -30,4 +30,4 @@ const loginVendor = async (req, res) => {
   return res.status(result.status).json(result);
 };
 
-export { registerCustomer, loginCustomer, loginVendor };
+module.exports = { registerCustomer, loginCustomer, loginVendor };

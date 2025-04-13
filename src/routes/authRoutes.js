@@ -1,8 +1,8 @@
-import express from 'express';
+const express = require('express');
 const router = express.Router();
-import { AuthController } from '../controllers/index.js';
-import { validate } from '../middlewares/validationMiddleware.js';
-import { customerRegistrationSchema, loginSchema } from '../validations/authValidation.js';
+const { AuthController } = require('../controllers/index');
+const { validate } = require('../middlewares/validationMiddleware');
+const { customerRegistrationSchema, loginSchema } = require('../validations/authValidation');
 
 // Public routes
 router.post('/register', validate(customerRegistrationSchema), AuthController.registerCustomer);
@@ -11,4 +11,4 @@ router.post('/login/customer', validate(loginSchema), AuthController.loginCustom
 
 router.post('/login/vendor', validate(loginSchema), AuthController.loginVendor);
 
-export default router;
+module.exports = router;

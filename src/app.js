@@ -1,12 +1,12 @@
-import express from 'express';
-import cors from 'cors';
-import helmet from 'helmet';
-import morgan from 'morgan';
-import rateLimit from 'express-rate-limit';
-import { swaggerDocs } from './swagger/swagger.js';
-import vendorRoutes from './routes/vendorRoutes.js';
-import authRoutes from './routes/authRoutes.js';
-import menuItemRoutes from './routes/menuItemRoutes.js';
+const express = require('express');
+const cors = require('cors');
+const helmet = require('helmet');
+const morgan = require('morgan');
+const rateLimit = require('express-rate-limit');
+const { swaggerDocs } = require('./swagger/swagger');
+const vendorRoutes = require('./routes/vendorRoutes');
+const authRoutes = require('./routes/authRoutes');
+const menuItemRoutes = require('./routes/menuItemRoutes');
 
 const app = express();
 
@@ -58,4 +58,4 @@ app.use((err, req, res, next) => {
 const PORT = process.env.PORT || 4000;
 swaggerDocs(app, PORT);
 
-export default app;
+module.exports = app;

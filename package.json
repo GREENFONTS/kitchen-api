@@ -3,10 +3,9 @@
   "version": "1.0.0",
   "description": "API for a kitchen application",
   "main": "index.js",
-  "type": "module",
   "scripts": {
     "start": "npm run db:setup && node index.js",
-    "dev": "nodemon --experimental-json-modules index.js",
+    "dev": "nodemon index.js",
     "format": "prettier --write .",
     "build": "mkdir -p dist && cp -R src dist/src && cp index.js dist/",
     "build:js": "babel src -d dist --copy-files",

@@ -1,4 +1,4 @@
-import * as menuItemService from '../services/MenuItemService.js';
+const menuItemService = require('../services/MenuItemService');
 
 /**
  * Get all menu items with pagination
@@ -70,7 +70,7 @@ const toggleAvailability = async (req, res) => {
   return res.status(result.status).json(result);
 };
 
-export {
+module.exports = {
   getAllMenuItems,
   getMenuItemById,
   createMenuItem,

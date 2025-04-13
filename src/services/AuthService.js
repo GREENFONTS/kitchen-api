@@ -1,8 +1,8 @@
-import { PrismaClient } from '@prisma/client';
+const { PrismaClient } = require('@prisma/client');
 const prisma = new PrismaClient();
-import * as apiResponse from '../utils/apiResponse.js';
-import bcrypt from 'bcrypt';
-import jwt from 'jsonwebtoken';
+const apiResponse = require('../utils/apiResponse');
+const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
 
 /**
  * Register a new customer
@@ -203,4 +203,4 @@ const verifyToken = async token => {
   );
 };
 
-export { registerCustomer, loginCustomer, loginVendor, verifyToken };
+module.exports = { registerCustomer, loginCustomer, loginVendor, verifyToken };

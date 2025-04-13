@@ -1,7 +1,7 @@
-import jwt from 'jsonwebtoken';
-import { PrismaClient } from '@prisma/client';
+const jwt = require('jsonwebtoken');
+const { PrismaClient } = require('@prisma/client');
 const prisma = new PrismaClient();
-import * as apiResponse from '../utils/apiResponse.js';
+const apiResponse = require('../utils/apiResponse');
 
 /**
  * Verify JWT token and attach user to request
@@ -157,4 +157,4 @@ const requireVendorOwnership = paramName => {
   };
 };
 
-export { authenticate, requireCustomer, requireVendor, requireVendorOwnership };
+module.exports = { authenticate, requireCustomer, requireVendor, requireVendorOwnership };

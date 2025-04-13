@@ -1,4 +1,4 @@
-import Joi from 'joi';
+const Joi = require('joi');
 
 // Vendor query validation schema
 const vendorQuerySchema = Joi.object({
@@ -26,4 +26,4 @@ const vendorIdSchema = Joi.object({
   }),
 });
 
-export { vendorQuerySchema, vendorIdSchema };
+module.exports = { vendorQuerySchema, vendorIdSchema };

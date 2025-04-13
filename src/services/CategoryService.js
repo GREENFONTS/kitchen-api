@@ -1,6 +1,6 @@
-import { PrismaClient } from '@prisma/client';
+const { PrismaClient } = require('@prisma/client');
 const prisma = new PrismaClient();
-import { handleServiceResponse } from '../utils/apiResponse.js';
+const { handleServiceResponse } = require('../utils/apiResponse');
 
 /**
  * Get all categories for a vendor
@@ -64,4 +64,4 @@ const createCategory = async categoryData => {
   );
 };
 
-export { getVendorCategories, createCategory };
+module.exports = { getVendorCategories, createCategory };

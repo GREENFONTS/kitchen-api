@@ -1,11 +1,11 @@
-import express from 'express';
+const express = require('express');
 const router = express.Router();
-import { VendorController, MenuItemController } from '../controllers/index.js';
-import { authMiddleware } from '../middlewares/index.js';
-import { validate } from '../middlewares/validationMiddleware.js';
-import Joi from 'joi';
-import { vendorQuerySchema, vendorIdSchema } from '../validations/vendorValidation.js';
-import { createMenuItemSchema, updateMenuItemSchema } from '../validations/menuItemValidation.js';
+const { VendorController, MenuItemController } = require('../controllers/index');
+const { authMiddleware } = require('../middlewares/index');
+const { validate } = require('../middlewares/validationMiddleware');
+const Joi = require('joi');
+const { vendorQuerySchema, vendorIdSchema } = require('../validations/vendorValidation');
+const { createMenuItemSchema, updateMenuItemSchema } = require('../validations/menuItemValidation');
 
 // Public routes
 router.get(
@@ -65,4 +65,4 @@ router.post(
   VendorController.createCategory
 );
 
-export default router;
+module.exports = router;

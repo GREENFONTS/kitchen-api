@@ -1,8 +1,10 @@
 // Import the controller modules
-import * as authController from './authController.js';
-import * as vendorController from './vendorController.js';
-import * as menuItemController from './menuItemController.js';
+const authController = require('./authController');
+const vendorController = require('./vendorController');
+const menuItemController = require('./menuItemController');
 
-export const AuthController = authController;
-export const VendorController = vendorController;
-export const MenuItemController = menuItemController;
+module.exports = {
+  AuthController: authController,
+  VendorController: vendorController,
+  MenuItemController: menuItemController,
+};

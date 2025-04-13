@@ -1,10 +1,10 @@
-import express from 'express';
+const express = require('express');
 const router = express.Router();
-import { MenuItemController } from '../controllers/index.js';
-import { authMiddleware } from '../middlewares/index.js';
-import { validate } from '../middlewares/validationMiddleware.js';
-import { menuItemQuerySchema } from '../validations/menuItemValidation.js';
-import Joi from 'joi';
+const { MenuItemController } = require('../controllers/index');
+const { authMiddleware } = require('../middlewares/index');
+const { validate } = require('../middlewares/validationMiddleware');
+const { menuItemQuerySchema } = require('../validations/menuItemValidation');
+const Joi = require('joi');
 
 // Public routes
 router.get(
@@ -21,4 +21,4 @@ router.get(
   MenuItemController.getMenuItemById
 );
 
-export default router;
+module.exports = router;

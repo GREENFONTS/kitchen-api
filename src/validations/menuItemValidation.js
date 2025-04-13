@@ -1,4 +1,4 @@
-import Joi from 'joi';
+const Joi = require('joi');
 
 // Menu item creation validation schema
 const createMenuItemSchema = Joi.object({
@@ -75,4 +75,4 @@ const menuItemQuerySchema = Joi.object({
   categoryId: Joi.string().optional(),
 });
 
-export { createMenuItemSchema, updateMenuItemSchema, menuItemQuerySchema };
+module.exports = { createMenuItemSchema, updateMenuItemSchema, menuItemQuerySchema };

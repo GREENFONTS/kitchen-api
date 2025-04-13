@@ -1,6 +1,6 @@
-import { PrismaClient } from '@prisma/client';
+const { PrismaClient } = require('@prisma/client');
 const prisma = new PrismaClient();
-import * as apiResponse from '../utils/apiResponse.js';
+const apiResponse = require('../utils/apiResponse');
 
 /**
  * Get all menu items with pagination
@@ -377,7 +377,7 @@ const toggleAvailability = async id => {
   );
 };
 
-export {
+module.exports = {
   getAllMenuItems,
   getMenuItemById,
   createMenuItem,

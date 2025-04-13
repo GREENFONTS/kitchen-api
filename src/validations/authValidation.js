@@ -1,4 +1,4 @@
-import Joi from 'joi';
+const Joi = require('joi');
 
 // Customer registration validation schema
 const customerRegistrationSchema = Joi.object({
@@ -34,4 +34,4 @@ const loginSchema = Joi.object({
   }),
 });
 
-export { customerRegistrationSchema, loginSchema };
+module.exports = { customerRegistrationSchema, loginSchema };

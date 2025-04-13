@@ -1,5 +1,5 @@
-import * as vendorService from '../services/VendorService.js';
-import * as categoryService from '../services/CategoryService.js';
+const vendorService = require('../services/VendorService');
+const categoryService = require('../services/CategoryService');
 
 /**
  * Get all vendors with pagination
@@ -70,4 +70,10 @@ const createCategory = async (req, res) => {
   return res.status(result.status).json(result);
 };
 
-export { getAllVendors, getVendorById, getVendorMenuItems, getVendorCategories, createCategory };
+module.exports = {
+  getAllVendors,
+  getVendorById,
+  getVendorMenuItems,
+  getVendorCategories,
+  createCategory,
+};

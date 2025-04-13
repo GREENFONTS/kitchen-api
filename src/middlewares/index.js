@@ -1,5 +1,7 @@
-import * as auth from './authMiddleware.js';
-import * as validation from './validationMiddleware.js';
+const auth = require('./authMiddleware');
+const validation = require('./validationMiddleware');
 
-export const authMiddleware = { ...auth };
-export const validationMiddleware = { ...validation };
+module.exports = {
+  authMiddleware: { ...auth },
+  validationMiddleware: { ...validation },
+};
